@@ -26,10 +26,12 @@ class Colors {
 // Class representing a process that implements Runnable to be run by a thread
 class Process implements Runnable {
     private String name; // Name of the process
-    private int priority; //Process prioriy from 1 to 5
+    private int priority; //Process prioriy from 1 to 10
     private int burstTime; // Total time the process requires to complete (in milliseconds)
     private int timeQuantum; // Time slice (time quantum) allowed per CPU access (in milliseconds)
     private int remainingTime; // Time left for the process to finish its execution
+    private long creationTime;  // Feature 3 process creation time
+    private long totalWaitingTime; // Feature 3 total wating time
 
     // Constructor to initialize the process with name, burst time, and time quantum
     public Process(String name, int burstTime, int timeQuantum) {
@@ -38,6 +40,17 @@ class Process implements Runnable {
         this.burstTime = burstTime;
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time
+        this.creationTime = System.currentTimeMillis(); // F3
+        this.totalWaitingTime =0; // F3
+    }
+    public long getCreationTime(){
+        return creationTime;
+    }
+    public long getTotalWaitingTime(){
+        return totalWaitingTime;
+    }
+    public void setTotalWaitingTime(long totalWaitingTime){
+        this.totalWaitingTime = totalWaitingTime;
     }
 
     // This method will be called when the thread for this process is started
@@ -255,7 +268,8 @@ public class SchedulerSimulation {
             
             // Retrieve the process associated with the thread from the map
             Process process = processMap.get(currentThread);
-            
+            process.setTotalWaitingTime(System.currentTimeMillis()-process.getCreationTime()-process.getBurstTime());
+
             // Check if the process is not finished
             if (!process.isFinished()) {
                 // If the process still has remaining time, check if there are more processes in queue
@@ -284,10 +298,21 @@ public class SchedulerSimulation {
                           "╚════════════════════════════════════════════════════════════════════════════════╝" + 
                           Colors.RESET + "\n");
         System.out.println("Total context switches: "+ contextSwitches);
+        System.out.println("\nProcess Name\tBurst Time\tWaiting Time");
+        System.out.println("-------------------------------------------");
+
+                processMap.values().stream().distinct().forEach(p ->
+        System.out.println(
+                  p.getName() + "\t\t" +
+                  p.getBurstTime() + "ms\t\t" +
+                 p.getTotalWaitingTime() + "ms"
+     )
+        ); 
     }
     
     // Method to add a process to the queue and map, while printing a "ready" message
     public static void addProcessToQueue(Process process, Queue<Thread> processQueue, 
+        
                                         Map<Thread, Process> processMap) {
         // Create a new thread to run the process
         Thread thread = new Thread(process);
