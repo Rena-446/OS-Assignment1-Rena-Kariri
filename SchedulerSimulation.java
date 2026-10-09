@@ -298,21 +298,22 @@ public class SchedulerSimulation {
                           "╚════════════════════════════════════════════════════════════════════════════════╝" + 
                           Colors.RESET + "\n");
         System.out.println("Total context switches: "+ contextSwitches);
-        System.out.println("\nProcess Name\tBurst Time\tWaiting Time");
-        System.out.println("-------------------------------------------");
+        System.out.println("\nProcess Name\tBurst Time\tWaiting Time\tTurnaround Time");
+        System.out.println("-----------------------------------------------------------");
 
-                processMap.values().stream().distinct().forEach(p ->
-        System.out.println(
-                  p.getName() + "\t\t" +
-                  p.getBurstTime() + "ms\t\t" +
-                 p.getTotalWaitingTime() + "ms"
-     )
-        ); 
+               processMap.values().stream().distinct().forEach(p ->
+    System.out.println(
+        p.getName() + "\t\t" +
+        p.getBurstTime() + "ms\t\t" +
+        p.getTotalWaitingTime() + "ms\t\t" +
+        (p.getTotalWaitingTime() + p.getBurstTime()) + "ms"
+    )
+);
     }
     
     // Method to add a process to the queue and map, while printing a "ready" message
     public static void addProcessToQueue(Process process, Queue<Thread> processQueue, 
-        
+
                                         Map<Thread, Process> processMap) {
         // Create a new thread to run the process
         Thread thread = new Thread(process);
