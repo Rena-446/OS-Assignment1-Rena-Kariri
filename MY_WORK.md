@@ -29,17 +29,17 @@
 
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
-| **University Email** | [yourid]@std.psau.edu.sa |
-| **GitHub Username** | [your-github-username] |
-| **Repository Link** | [Paste your repository link here] |
+| **Full Name** | [Rena hasan mohammed kariri] |
+| **Student ID** | [446052320] |
+| **University Email** | [446052320]@std.psau.edu.sa |
+| **GitHub Username** | [Rena-446] |
+| **Repository Link** | [https://github.com/Rena-446/OS-Assignment1-Rena-Kariri/commits/main/] |
  
 ---
 
 ## 🎥 Video Link
 
-**Video Link**: [Paste your video link here]
+**Video Link**: [https://drive.google.com/file/d/1rZ-I24yjH6_5iePO5XqnLsa0PwD00oPy/view?usp=share_link]
 
 > ⚠️ **WARNING:** The video must be **publicly accessible** ("Anyone with the link can view") on **Google Drive**, **YouTube (Unlisted or Public)** or any other cloud file-sharing system. A private, restricted or broken link counts as a **missing video (-1 mark)**.
 >
@@ -129,69 +129,85 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
+### Entry 1 - [September 24, 2026]
 **What I did**:
-
+Created a GitHub account using my university email. Forked the starter repository and renamed it for my assignment. Updated the student ID in SchedulerSimulation.java to 446052320. Committed and pushed the changes to GitHub.
 **Details**:
-
+Created a GitHub account using My university email.
+Forked the starter repository and renamed it for my assignment.
+Updated the student ID in SchedulerSimulation.java to 446052320.
+Committed and pushed the changes to GitHub.
 **Challenges**:
-
+I was new to the repository setup process and needed to understand how to fork and rename the project correctly.
 **Solution**:
-
+I followed the repository instructions, configured the project, and verified that my changes appeared on GitHub.
 **Time spent**:
-
+40 minutes
 ---
 
-### Entry 2 - [Date and Time]
+### Entry 2 - [September 25 , 2026]
 **What I did**:
-
+Implemented Feature 1 by adding a priority value to each process in the Round-Robin scheduler simulation.
 **Details**:
-
+Added an integer priority value ranging from 1 to 10, where 10 represents the highest priority.
+Assigned random priorities to processes.
+Updated the ready queue output to display each process’s priority.
+Added comments to explain the priority feature.
 **Challenges**:
-
+I needed to ensure that process priorities were displayed correctly without changing the original Round-Robin scheduling order.
 **Solution**:
-
+I kept priority as a display and tracking feature only, so processes continued to follow the FIFO Round-Robin order.
 **Time spent**:
-
+1 hours
 ---
 
-### Entry 3 - [Date and Time]
+### Entry 3 - [October 6,2026]
 **What I did**:
-
+Implemented Feature 2 by adding a counter to track the total number of context switches during the scheduler simulation.
 **Details**:
-
+Added a static integer variable named contextSwitches.
+Incremented the counter when a process thread starts.
+Displayed the total number of context switches after all processes completed.
+Ran the program and verified that the counter appeared in the output.
 **Challenges**:
-
+I needed to determine where to increment the counter and how to display the final result after the simulation finished.
 **Solution**:
-
+I incremented the counter before currentThread.start() and printed the total after the scheduler simulation completed.
 **Time spent**:
-
+2 hours
 ---
 
-### Entry 4 - [Date and Time]
+### Entry 4 - [October 6 , 2026]
 **What I did**:
-
+Implemented Feature 3 by adding process creation time and total waiting time tracking to the scheduler simulation.
 **Details**:
-
+Added creationTime and totalWaitingTime fields to the Process class.
+Used System.currentTimeMillis() to record process creation time and calculate waiting time.
+Added getters and a setter for the new fields.
+Created a summary table showing process names, burst times, and waiting times.
+Ran the program to check that the waiting time values appeared in the output.
 **Challenges**:
-
+Calculating waiting time correctly and displaying the results in a readable table required careful testing.
 **Solution**:
-
+Used the process creation timestamp and burst time in the waiting time calculation, then tested the program to verify that the summary table was displayed.
 **Time spent**:
-
+3 hours
 ---
 
-### Entry 5 - [Date and Time]
+### Entry 5 - [October 9, 2026]
 **What I did**:
-
+Updated Feature 3 to include turnaround time in the final process summary table.
 **Details**:
-
+Added a Turnaround Time column to the final summary table.
+Calculated turnaround time as the sum of waiting time and burst time.
+Updated the table headings to display all four required columns: Process Name, Burst Time, Waiting Time, and Turnaround Time.
+Compiled and ran the program from the VS Code terminal to verify that the new column appeared in the output.
 **Challenges**:
-
+I needed to update the output table without introducing syntax errors and ensure that the turnaround time calculation followed the assignment requirements.
 **Solution**:
-
+Updated the print statements and used totalWaitingTime + burstTime to calculate turnaround time. Then, I compiled and ran the program and confirmed that the four columns appeared in the output.
 **Time spent**:
-
+30 minutes
 ---
 
 ### Entry 6 - [Optional - Date and Time]
@@ -211,14 +227,14 @@
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: [7-8 hours]
 
 **Most challenging part**:
-
+The most challenging part was setting up the Java environment and calculating waiting time correctly. I faced a compilation problem because my initial Java version did not support the String.repeat() method. I solved this by installing JDK 17 and configuring Visual Studio Code to use it. I also needed to make sure the final summary table displayed the required values correctly.
 **Most interesting learning**:
-
+The most interesting part was learning how to track process priorities, count context switches, and calculate waiting time and turnaround time. I learned how to use Java variables, methods, and timestamps to add these features to an existing program. Running the simulation helped me understand how the results appear in practice.
 **What I would do differently next time**:
-
+Next time, I would review all assignment requirements before starting implementation. I would test each feature separately and commit my changes after completing each part. I would also plan my time earlier to leave enough time for documentation, testing, and the video demonstration.
 ---
 
 # Part B: Reflection (0.5 mark)
@@ -237,7 +253,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I learned that multithreading allows a program to run multiple threads to perform tasks. In this assignment, I learned how the Thread class is used to create and manage threads. The Thread.start() method starts a new thread and allows it to run independently. I also learned that Thread.sleep() can pause a thread for a short time to simulate work. The Thread.join() method allows one thread to wait for another thread to finish. The most interesting thing I learned was how threads were used in the Round-Robin scheduler simulation to represent processes and display their execution progress.]
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -245,7 +261,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[The most challenging part of this assignment was setting up the Java environment and understanding the existing code. At first, I had a compilation error because my installed Java version did not support the String.repeat() method. I solved this problem by installing JDK 17 and configuring Visual Studio Code to use it. Another challenge was calculating waiting time and displaying the results correctly. I tested the program after making changes to check that the output was correct. This experience taught me to solve problems step by step instead of changing many things at once.]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -253,7 +269,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I overcame the challenges by reading the instructions and examining the existing code carefully. When the Java compilation error appeared, I checked my Java version and installed JDK 17. I then configured Visual Studio Code to use the new version and ran the program again. For each feature, I made small changes and checked the output after testing the code. I also used the terminal to compile and run the program when the Run button did not work. These steps helped me understand the errors and complete the required features more confidently.]
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
@@ -261,15 +277,15 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[Multithreading can be useful in many real-world applications. For example, a web browser can use different threads to load web pages, play videos, and respond to user actions. A mobile application can perform background tasks while allowing the user to continue using the interface. In operating systems, multithreading helps different tasks make progress without blocking the entire application. The Round-Robin scheduling concept can help share CPU time fairly among processes that are ready to run. This assignment helped me understand how threads and scheduling concepts can be used to improve responsiveness and manage tasks.]
 
 ### Optional: What would you like to learn more about?
 
-[Any topics related to threading or operating systems that you're curious about?]
+[I would like to learn more about how operating systems schedule threads and processes. I am also interested in learning how synchronization prevents multiple threads from accessing shared data incorrectly. I want to understand how multithreading is used in web applications and mobile applications. Learning more about thread safety and performance would help me write better software.]
 
 ### Optional: How confident do you feel about multithreading concepts now?
 
-[Beginner / Intermediate / Confident. What do you understand well? What needs more practice?]
+[I feel more confident about the basic concepts of multithreading after completing this assignment. I understand how threads can represent tasks and how scheduling allows processes to make progress. I can also explain the purpose of the priority, context switch counter, waiting time, and turnaround time features I implemented. However, I still need more practice with advanced threading concepts and synchronization. I believe that testing more examples and writing additional programs will improve my understanding.]
 
 ### Optional: Feedback on the assignment
 
@@ -293,7 +309,7 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[A process is heavier than a thread because it requires more resources to create and manage. Each process has its own memory space, while threads in the same process share memory and resources. In this assignment, the Process class represents tasks such as P1 and P2, while Java Thread objects execute the simulation work. Threads are more lightweight and usually have less creation and switching overhead than processes.]
 
 ## Question 2: Ready Queue Behavior
 
@@ -305,15 +321,15 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[In Round-Robin scheduling, a process that does not finish within its time quantum is moved to the end of the ready queue. For example, in my program, P1 runs for its time quantum and is added back to the ready queue because it still has remaining burst time. The program prints a message showing that the process was re-queued, and it can run again after other processes get their turns. This behavior improves fairness because each process gets a chance to use the CPU instead of allowing one process to run until completion.]
 
 Example from my output:
 ```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
+[P1 was added back to the ready queue because it still had remaining burst time.]
 ```
 
 **Explanation of example:**
-[Explain what is happening in the output snippet you pasted.]
+[This message means that P1 did not finish during its time quantum. The scheduler returned P1 to the end of the ready queue so other processes could run first. P1 will get another turn when the scheduler reaches it again. This allows the CPU to be shared fairly among the processes.]
 
 ## Question 3: Thread Lifecycle
 
@@ -323,15 +339,15 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
 
-1. **New**: [When is P1 in the New state?]
+1. **New**: [P1 is in the New state when its Thread object is created but Thread.start() has not been called yet.]
 
-2. **Runnable**: [When does P1 become Runnable?]
+2. **Runnable**: [P1 becomes Runnable when Thread.start() is called, meaning it is ready to run and waiting for CPU time.]
 
-3. **Running**: [When is P1 Running?]
+3. **Running**: [P1 is Running when the CPU executes its thread. In the scheduler, P1 gets CPU time to perform its work.]
 
-4. **Waiting**: [When and why would a thread be Waiting?]
+4. **Waiting**: [P1 enters a waiting state when it waits for another thread to finish, such as when Thread.join() is used.]
 
-5. **Terminated**: [When is P1 Terminated?]
+5. **Terminated**: [P1 reaches the Terminated state when its run() method finishes executing.]
 
 ## Question 4: Real-World Applications
 
@@ -344,29 +360,29 @@ Example from my output:
 ### Example 1 (operating-system level): [Name of scenario]
 
 **Description**:
-[Describe the real-world scenario.]
+[An operating system uses Round-Robin scheduling to share CPU time among multiple processes. Each process receives a fixed time quantum to execute its tasks. If a process does not finish, it returns to the ready queue to wait for another turn.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Round-Robin improves fairness because every process gets a chance to use the CPU. It also improves responsiveness by preventing one process from using the CPU for too long. The fixed time quantum makes CPU scheduling more predictable.]
 
 ### Example 2: [Name of application/scenario]
 
 **Description**:
-[Describe the real-world scenario or application.]
+[A web browser can use multiple threads to load webpages, play videos, and respond to user input. These tasks can run concurrently, helping the browser handle different activities. Threads can share resources within the same application.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Round-Robin can help share CPU time fairly among runnable tasks. This helps prevent one task from occupying the CPU for too long. It can improve responsiveness when several tasks need CPU time.]
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1.Threads and processes.
+2. Round-Robin scheduling and the ready queue.
+3.Thread lifecycle and context switching.
 
 **Concepts I need to study more:**
-1.
-2.
+1.Thread lifecycle states.
+2.Waiting time and turnaround time.
 
 ---
 
@@ -375,36 +391,36 @@ Example from my output:
 > ⚠️ **WARNING:** Go through every line. Late submission costs **-1 mark per day**, and the deadline is **October 10, 2026**.
 
 **Repository**
-- [ ] Repository is **PUBLIC** (Settings → Danger Zone → Visibility)
-- [ ] Repository is renamed to `OS-Assignment1-YourFirstName-YourLastName`
-- [ ] GitHub account uses the university email (`@std.psau.edu.sa`)
+- [x ] Repository is **PUBLIC** (Settings → Danger Zone → Visibility)
+- [ x] Repository is renamed to `OS-Assignment1-YourFirstName-YourLastName`
+- [x ] GitHub account uses the university email (`@std.psau.edu.sa`)
 
 **Code**
-- [ ] Student ID is set in `SchedulerSimulation.java` (line 150)
-- [ ] Code compiles and runs with no errors
-- [ ] Feature 1 (priority), Feature 2 (context switches) and Feature 3 (waiting time table) all work
-- [ ] Each feature has clear comments
+- [x ] Student ID is set in `SchedulerSimulation.java` (line 150)
+- [ x] Code compiles and runs with no errors
+- [ x] Feature 1 (priority), Feature 2 (context switches) and Feature 3 (waiting time table) all work
+- [ x] Each feature has clear comments
 
 **Commits**
-- [ ] **At least 3 meaningful commits, ideally 6 or more**
-- [ ] **One commit per feature**
-- [ ] Commits are spread over **different dates** (not all in the last hour)
-- [ ] Everything is **pushed** to GitHub
+- [ x] **At least 3 meaningful commits, ideally 6 or more**
+- [x ] **One commit per feature**
+- [ x] Commits are spread over **different dates** (not all in the last hour)
+- [ x] Everything is **pushed** to GitHub
 
 **This file (`MY_WORK.md`)**
-- [ ] Full name and student ID filled in at the top
-- [ ] Development log has **5+ entries** on different dates
-- [ ] Reflection: 4 questions, 5-7 sentences each
-- [ ] Technical answers: 4 questions, 3-5 sentences each, with examples from **your** output
-- [ ] No `[...]` placeholders left
-- [ ] No section headers deleted
+- [x ] Full name and student ID filled in at the top
+- [ x] Development log has **5+ entries** on different dates
+- [x ] Reflection: 4 questions, 5-7 sentences each
+- [x ] Technical answers: 4 questions, 3-5 sentences each, with examples from **your** output
+- [ x] No `[...]` placeholders left
+- [ x] No section headers deleted
 
 **Video**
-- [ ] 2-3 minutes long, named `StudentID_Assignment1_Demo.mp4`
-- [ ] Shows your name, ID, repository, 3 features, IDE execution, one threading concept, and commit history
-- [ ] Link is **public** (tested in an incognito window) and pasted in the **Video Link** section above
+- [ x] 2-3 minutes long, named `StudentID_Assignment1_Demo.mp4`
+- [x ] Shows your name, ID, repository, 3 features, IDE execution, one threading concept, and commit history
+- [ x] Link is **public** (tested in an incognito window) and pasted in the **Video Link** section above
 
 **Blackboard**
-- [ ] Submit **only** the link to your public GitHub repository
+- [ x] Submit **only** the link to your public GitHub repository
 
 > 🎯 **Good luck!** Start early, commit regularly, and make sure you can explain every line you submit.
